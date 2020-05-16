@@ -1,0 +1,245 @@
+@import "./variables";
+@import "./mixins";
+
+body,
+html {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: $Background;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  color: white;
+  position: relative;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.header {
+  margin-top: 30px;
+  margin-bottom: 100px;
+  display: flex;
+  width: 900px;
+  height: 170px;
+  border: 3px solid $HeaderOutline;
+  border-radius: 8px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 30px;
+  box-sizing: border-box;
+
+  &__title {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__score {
+    height: 110px;
+    width: 110px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    h4 {
+      color: $ScoreText;
+      font-weight: 600;
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+      margin-top: 15px;
+    }
+    div {
+      color: $DarkText;
+      font-size: 3.5rem;
+      margin: 0;
+      font-weight: 700;
+      margin-top: 5px;
+      line-height: 2.5rem;
+    }
+  }
+}
+
+.container {
+  position: relative;
+  min-width: 650px;
+  min-height: 650px;
+  background: url(../images/bg-triangle.svg);
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  .btn {
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 180px;
+    height: 180px;
+    border-radius: 200%;
+    cursor: pointer;
+  }
+
+  &__paper {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background: url("../images/icon-paper.svg") white;
+    box-shadow: inset 0px 5px 0px 0px #ccc, 0px 6px 0px 0px hsl(230, 89%, 52%);
+    border: 15px solid hsl(230, 89%, 65%);
+  }
+  &__scissors {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: url("../images/icon-scissors.svg") white;
+    box-shadow: inset 0px 5px 0px 0px #ccc, 0px 6px 0px 0px hsl(39, 89%, 49%);
+    border: 15px solid hsl(40, 84%, 53%);
+  }
+  &__rock {
+    position: absolute;
+    bottom: 60px;
+    left: calc(50% - 105px);
+    background: url("../images/icon-rock.svg") white;
+    box-shadow: inset 0px 5px 0px 0px #ccc, 0px 6px 0px 0px hsl(349, 71%, 52%);
+    border: 15px solid hsl(349, 70%, 56%);
+  }
+}
+
+.game {
+  opacity: 0;
+  display: flex;
+  width: 800px;
+  height: 650px;
+  align-items: center;
+  justify-content: space-between;
+  h2 {
+    text-align: center;
+  }
+
+  &__player {
+    .btn {
+      display: none;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 180px;
+      height: 180px;
+      border-radius: 200%;
+      cursor: pointer;
+    }
+
+    .paper {
+      background: url("../images/icon-paper.svg") white;
+      box-shadow: inset 0px 5px 0px 0px #ccc, 0px 6px 0px 0px hsl(230, 89%, 52%);
+      border: 15px solid hsl(230, 89%, 65%);
+    }
+    .scissors {
+      background: url("../images/icon-scissors.svg") white;
+      box-shadow: inset 0px 5px 0px 0px #ccc, 0px 6px 0px 0px hsl(39, 89%, 49%);
+      border: 15px solid hsl(40, 84%, 53%);
+    }
+    .rock {
+      background: url("../images/icon-rock.svg") white;
+      box-shadow: inset 0px 5px 0px 0px #ccc, 0px 6px 0px 0px hsl(349, 71%, 52%);
+      border: 15px solid hsl(349, 70%, 56%);
+    }
+  }
+
+  &__house {
+    .btn {
+      display: none;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 180px;
+      height: 180px;
+      border-radius: 200%;
+      cursor: pointer;
+    }
+
+    .paper {
+      background: url("../images/icon-paper.svg") white;
+      box-shadow: inset 0px 5px 0px 0px #ccc, 0px 6px 0px 0px hsl(230, 89%, 52%);
+      border: 15px solid hsl(230, 89%, 65%);
+    }
+    .scissors {
+      background: url("../images/icon-scissors.svg") white;
+      box-shadow: inset 0px 5px 0px 0px #ccc, 0px 6px 0px 0px hsl(39, 89%, 49%);
+      border: 15px solid hsl(40, 84%, 53%);
+    }
+    .rock {
+      background: url("../images/icon-rock.svg") white;
+      box-shadow: inset 0px 5px 0px 0px #ccc, 0px 6px 0px 0px hsl(349, 71%, 52%);
+      border: 15px solid hsl(349, 70%, 56%);
+    }
+  }
+
+  &__result {
+    .btn {
+      display: inline;
+      text-align: center;
+      border: 3px solid $HeaderOutline;
+      border-radius: 8px;
+      margin: auto;
+      letter-spacing: 0.12rem;
+      padding: 9px 15px;
+      cursor: pointer;
+    }
+  }
+}
+
+.rules {
+  border: 3px solid $HeaderOutline;
+  border-radius: 8px;
+  letter-spacing: 0.12rem;
+  padding: 9px 40px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.back {
+  &.show {
+    z-index: 100;
+    opacity: 1;
+    transition: 0.2s;
+    .rules-modal {
+      z-index: 200;
+    }
+  }
+  transition: 0.2s;
+  opacity: 0;
+  z-index: -100;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .rules-modal {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background: white;
+    color: $DarkText;
+    border-radius: 8px;
+    padding: 30px;
+    box-sizing: border-box;
+    h1 {
+      margin: 0;
+      margin-bottom: 60px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="styles.css"></link>
+
+  </head>
+  <body>
+    <div class="header">
+      <div class="header__title">
+        <img src="images/logo.svg" alt="logo" />
+      </div>
+      <div class="header__score">
+        <h4>SCORE</h4>
+        <div id="score">0</div>
+      </div>
+    </div>
+
+    <div id="container" class="container">
+      <div id="paper" class="btn container__paper"></div>
+      <div id="scissors" class="btn container__scissors"></div>
+      <div id="rock" class="btn container__rock"></div>
+    </div>
+
+    <div id="game" class="game">
+      <div class="game__player">
+        <h2>YOU PICKED</h2>
+
+          <div id="player-paper" class="btn paper"></div>
+          <div id="player-scissors" class="btn scissors"></div>
+          <div id="player-rock" class="btn rock"></div>
+
+      </div>
+      <div class="game__result">
+        <h1 id="result"></h1>
+        <div id="play-again" class="btn">PLAY AGAIN</div>
+      </div>
+      <div class="game__house">
+        <h2>THE HOUSE PICKED</h2>
+
+        <div id="house-paper" class="btn paper"></div>
+        <div id="house-scissors" class="btn scissors"></div>
+        <div id="house-rock" class="btn rock"></div>
+
+        </div>
+      </div>
+
+
+    <div id="rules" class="rules">RULES</div>
+    <div id="modal" class="back">
+    <div class="rules-modal">
+      <h1>RULES</h1>
+      <img src="images/image-rules.svg" alt="rules" />
+    </div>
+  </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
